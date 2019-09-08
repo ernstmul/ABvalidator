@@ -1,0 +1,304 @@
+{
+	"user_type": "experimenter",
+	"questions": [{
+		"type": "confirm",
+		"name": "hypothesis_specify",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/specify_hypothesis.md",
+		"context": "Before starting an experiment it is of importance to describe the hypothesis you want to test. By clearly writing this down you prevent so called 'KPI shopping'. You want to prevent interpretation of the results any other way then specified in advance.",
+		"message": "Did you specify an hypothesis describing the change, expected impact and reasoning behindthe expected impact?"
+	},
+	{
+		"type": "confirm",
+		"name": "hypothesis_falsifiable",
+		"requires": ["hypothesis_specify"],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/hypothesis_falsifiable.md",
+		"context": "Good, having an hypothesis is important. However, is this hypothesis also falsifiable? Does the experiment result in a truthfull conclusion about the hypothesis?",
+		"message": "Is you hypothesis falsifiable?"
+	},
+	{
+		"type": "confirm",
+		"name": "metrics_gathering",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/metrics_gathering.md",
+		"context": "Metrics need to be chosen that reflect the data quality and success of the experiment.",
+		"message": "Are you able to gather data on the exact metric that you want to impact?"
+	},
+	{
+		"type": "confirm",
+		"name": "metrics_direction_change",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/metrics_direction_change.md",
+		"context": null,
+		"message": "Did you in advance specify the direction of change of you metrics?"
+	},
+	{
+		"type": "confirm",
+		"name": "metrics_direction_guardrail",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/metrics_direction_guardrail.md",
+		"context": "Guardrail metrics are metrics that are crucial to the business endeavour, and should never deteriorate due to any change in the product.",
+		"message": "Did you keep track of any guardrail metrics that should not be impacted negatively?"
+	},
+	{
+		"type": "confirm",
+		"name": "risk_technical_debt",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/risk_technical_debt.md",
+		"context": "With running experiments risk is introduced into the development and release of the software product.",
+		"message": "Have you considered the technical debt introduced by having an experiment in your code?"
+	},
+	{
+		"type": "confirm",
+		"name": "risk_competitors",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/risk_competitors.md",
+		"context": null,
+		"message": "Did you think about and/or mitigated the risk of competitors getting early glimps at your product development by running the experiment?"
+	},
+	{
+		"type": "confirm",
+		"name": "risk_churn",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/risk_churn.md",
+		"context": null,
+		"message": "Are you aware that a (very) negative experience for users in the experiment due to some unforeseen fault could make them churn?"
+	},
+	{
+		"type": "confirm",
+		"name": "effect_size_change",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/effect_size_change.md",
+		"context": "For an experiment to be decisive a certain minimum number of participants is required. This number is based on the minimum effect size (Δ%) you want to be able to detect.",
+		"message": "Did you specify the minimum percentage of change, the effect size, you wanted to measure on the metrics in advance?"
+	},
+	{
+		"type": "confirm",
+		"name": "effect_size_duration",
+		"requires": ["effect_size_change"],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/effect_size_duration.md",
+		"context": null,
+		"message": "Is the minimal duration of the experiment calculated in advance based on the effect size and historical data?"
+	},
+	{
+		"type": "confirm",
+		"name": "overlap",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/overlap.md",
+		"context": "When participants are exposed to more than one experiment, the risk of carry over effects arises.",
+		"message": "Do you run multiple experiments simultaneously? And if so, are you aware that they might influence each other?"
+	},
+	{
+		"type": "confirm",
+		"name": "shutdown_criteria",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/shutdown_criteria.md",
+		"context": "A running experiment can have an unintentionally significant negative impact on the business, often when the guardrail metrics are violated. It is therefore of importance that either you or the Experiment Platform is aware of this scenario and able to shut down a running experiment.",
+		"message": "Did you in advance specify boundaries per metric for when the experiment should be shut down to prevent negative impact?"
+	},
+	{
+		"type": "confirm",
+		"name": "telemetry",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/telemetry.md",
+		"context": "Usually telemetry logging is put in place for debugging or testing purposes. This logging does however not necessarily result in data that reveals how the product is actually used.",
+		"message": "Is the data to support your hypothesis available?"
+	},
+	{
+		"type": "confirm",
+		"name": "AA_performed",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/AA_performed.md",
+		"context": "A/A tests are an essential feature for an Experiment Platform. Not only should the feature be present, a systematic routine for performing continuous A/A tests should be in play.",
+		"message": "Did you perform an A/A test with only the control variant to verify the experiment is set-up correctly?"
+	},
+	{
+		"type": "confirm",
+		"name": "MVT",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/MVT.md",
+		"context": "In the design of an experiment it is determined if an experiment is about testing a single change (one-factor-at-a-time) or multiple changes with a MultiVariate Test (MVT). Analysis and interpretation of MVT's are more difficult.",
+		"message": "Did you specify before the experiment if you are testing one change or multiple at once?"
+	}
+	,
+	{
+		"type": "confirm",
+		"name": "owners_multiple",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/owners_multiple.md",
+		"context": "For every experiment that is ran a group of experiment owners should be identified. It is even recommendable to have multiple owners for a single experiment. This ensures availability of at least one in a scenario that requires an urgent action by an operations engineer.",
+		"message": "Are multiple people in your team responsible for the experiment you are running?"
+	},
+	{
+		"type": "confirm",
+		"name": "owners_contactable",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/owners_contactable.md",
+		"context": null,
+		"message": "Do the operations engineers know your team is responsbile for this experiment?"
+	},
+	{
+		"type": "confirm",
+		"name": "stopping_early_peeking",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/stopping_early_peeking.md",
+		"context": "It is understandably interesting to look at the data and analysis during an experiment. This peeking might lead to early stopping the experiment because the results are interpreted by the experimenter or because some p-values already show significance.",
+		"message": "Were you able to look at conclusive results during the runtime of the experiment?"
+	},
+	{
+		"type": "confirm",
+		"name": "winner_designation_anomalies",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/winner_designation.md",
+		"context": "No matter how good the Experiment Platform is, it is always recommended to manually perform some checks before choosing the variant the Experiment Platform designated as winner.",
+		"message": "Did you (visually) check the data from the experiment and looked for anomalies?"
+	},
+	{
+		"type": "confirm",
+		"name": "winner_designation_working",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/winner_designation.md",
+		"context": null,
+		"message": "Did you verify the winning variant is actually working as expected?"
+	},
+	{
+		"type": "confirm",
+		"name": "winner_designation_guardrail",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/winner_designation.md",
+		"context": null,
+		"message": "Did you verify the guardrail metrics are not negatively impacted before implementing the winning variant?"
+	},
+	{
+		"type": "confirm",
+		"name": "future_experiments",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/future_experiments.md",
+		"context": "An experiment does not end with selecting a winning variant and implementing it for all users. The data from the experiment can be analysed in more depth to come up with new ideas for feature improvements and insights.",
+		"message": "Did you analyse the results of the experiment to come up with possible future improvements that can be tested?"
+	},
+	{
+		"type": "confirm",
+		"name": "coordinated_analysis_higher_level",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/coordinated_analysis_higher_level.md",
+		"context": "Experiments do not have to be about isolated feature improvements. Often experiments are part of acoordinated initiative to answer a higher-level business question.",
+		"message": "Is this experiment part of a set of experiments designed to answer a higher-level business question?"
+	},
+	{
+		"type": "confirm",
+		"name": "coordinated_analysis_higher_level_performed",
+		"requires": ["coordinated_analysis_higher_level"],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/coordinated_analysis_higher_level.md",
+		"context": null,
+		"message": "Did you analyse the results of this experiment in the broader higher-level view?"
+	},
+	{
+		"type": "confirm",
+		"name": "sharing_knowledge",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/sharing_knowledge.md",
+		"context": "Not seldom learnings are drawn from experiments. Sharing these learnings within the organisation helps to design future experiments and steer intrapreneurship.",
+		"message": "Do you have the possibility to share learnings from your experiment in a structured manner with colleagues?"
+	},
+	{
+		"type": "input",
+		"name": "randomisation_user_count",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/randomisation.md",
+		"context": "The correctness of randomisation is important for A/B tests. The following three questions will help determine the randomisation quality.",
+		"message": "How many users have participated in the experiment in total?",
+		"validator": "NumberValidator"
+	},
+	{
+		"type": "input",
+		"name": "randomisation_user_variant",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/randomisation.md",
+		"context": null,
+		"message": "How many users participated in the variant you want to check?",
+		"validator": "NumberValidator"
+	},
+	{
+		"type": "input",
+		"name": "randomisation_user_division",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/randomisation.md",
+		"context": null,
+		"message": "What percentage of total users should have been allocated to this variant (0-1)?",
+		"validator": "NumberValidator"
+	}
+	,
+	{
+		"type": "input",
+		"name": "data_quality",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/data_quality.md",
+		"context": "By performing a Sample Size Ratio Test the overal health of the experiment data can be checked. This is done by providing the path of a .csv file containing the user counts per variant and the expected division percentages (see https://github.com/ernstmul/ABvalidator/docs/data_quality.md for an example)",
+		"message": "Enter the path of the csv file with user counts and division percentages per variant",
+		"validator": "PathValidator"
+	},
+	{
+		"type": "input",
+		"name": "novelty_effect",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/novelty_effect.md",
+		"context": "Some changes to the product can cause regular visitors to behave differently (e.g. getting stuck in a new navigation menu, or exploring the changes). These effects wear off, and therefore influence the results of the experiment in a negative way. This novelty effect is however detectable in the data.",
+		"message": "Enter the path of the csv file containing the metric values for the experiment that need to be checked for the novelty effect",
+		"validator": "PathValidator"
+	},
+	{
+		"type": "input",
+		"name": "skewed_data",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/skewed_data.md",
+		"context": "Following the possible detection of unhealthy data it is worthwhile to look for any outliers skewing the data.",
+		"message": "Enter the path of the csv file containing the metric values for the experiment that need to be checked for skewed data",
+		"validator": "PathValidator"
+	},
+	{
+		"type": "confirm",
+		"name": "validation_manual",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/validation_manual.md",
+		"context": "Although ABvalidator is able to, partially, validate experiment results, the strongest form of validation is the reproducibility of the experiment. Whenever an experiment only marginally impacts the metrics, it should be executed again to validate the results and learnings.",
+		"message": "Did the experiment only marginally impact the metrics?"
+	},
+	{
+		"type": "confirm",
+		"name": "validation_rerun",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/validation_manual.md",
+		"context": null,
+		"message": "Did you rerun the experiment, preferably with higher power, to validate the results and learnings?"
+	},
+	{
+		"type": "input",
+		"name": "statistics_std",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/statistics.md",
+		"context": "The corner stone of A/B testing is statistics. By recalculating the values for the required power of the experiment, the p-values and conversions per day for Simpson's paradox, the accuracy of the given experiment can be determined.",
+		"message": "What is the standard deviation (σ) from pre-experiment data? (enter 0 to use the bootstrap method on the current experiment data)?",
+		"validator": "NumberValidator"
+	},
+	{
+		"type": "input",
+		"name": "statistics_sensitivity",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/statistics.md",
+		"context": null,
+		"message": "What is the sensitivity percentage you want to be able to detect (0-1)?",
+		"validator": "NumberValidator"
+	},
+
+	{
+		"type": "input",
+		"name": "statistics_path",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/statistics.md",
+		"context": null,
+		"message": "What is the path to the experiment data .csv?",
+		"validator": "PathValidator"
+	}
+]
+}

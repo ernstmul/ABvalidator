@@ -1,0 +1,37 @@
+{
+	"user_type": "experimenter",
+	"questions": [
+	{
+		"type": "confirm",
+		"name": "sharing_knowledge",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/sharing_knowledge.md",
+		"context": "Not seldom learnings are drawn from experiments. Sharing these learnings within the organisation helps to design future experiments and steer intrapreneurship.",
+		"message": "Do you have the possibility to share learnings from your experiment in a structured manner with colleagues?"
+	},
+	{
+		"type": "editor",
+		"name": "randomisation_user_count",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/randomisation.md",
+		"context": "The correctness of randomisation is important for A/B tests. The following three questions will help determine the randomisation quality.",
+		"message": "How many users have participated in the experiment in total?"
+	},
+	{
+		"type": "confirm",
+		"name": "randomisation_user_variant",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/randomisation.md",
+		"context": null,
+		"message": "How many users participated in the variant you want to check?"
+	},
+	{
+		"type": "confirm",
+		"name": "randomisation_user_division",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/randomisation.md",
+		"context": null,
+		"message": "What percentage of total users should have been allocated to this variant (0-1)?"
+	}
+]
+}

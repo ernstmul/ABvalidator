@@ -1,0 +1,15 @@
+{
+	"user_type": "experimenter",
+	"questions": [
+	
+	{
+		"type": "input",
+		"name": "data_quality",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/data_quality.md",
+		"context": "By performing a Sample Size Ratio Test the overal health of the experiment data can be checked. This is done by providing the path of a .csv file containing one column. Every row in this column is the user count of a variant in the experiment.",
+		"message": "Enter the path of the csv file with user counts per variant",
+		"validator": "PathValidator"
+	}
+]
+}

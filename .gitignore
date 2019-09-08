@@ -1,0 +1,5 @@
+venv/*
+build/*
+dist/*
+ABvalidator.egg-info
+*.pyc
