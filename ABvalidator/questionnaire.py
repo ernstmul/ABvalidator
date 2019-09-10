@@ -31,7 +31,7 @@ def get_questionnaire(isExperimenter):
     if isExperimenter:
         file_name = HERE + "/./data/questions_experimenter.json"
     else:
-        file_name = HERE + "data/questions_maintainer.json"
+        file_name = HERE + "/./data/questions_maintainer.json"
 
     with open(file_name) as json_file:
         data = json.load(json_file)
