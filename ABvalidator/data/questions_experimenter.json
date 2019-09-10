@@ -147,6 +147,14 @@
 	},
 	{
 		"type": "confirm",
+		"name": "stopping_early_day_of_week",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/stopping_early_day_of_week.md",
+		"context": null,
+		"message": "Did you run the experiment for an exact number of weeks (e.g. Wednesday to Wednesday)?"
+	},
+	{
+		"type": "confirm",
 		"name": "winner_designation_anomalies",
 		"requires": [],
 		"more_info": "https://github.com/ernstmul/ABvalidator/docs/winner_designation.md",

@@ -171,6 +171,14 @@
 	},
 	{
 		"type": "confirm",
+		"name": "stopping_early_day_of_week",
+		"requires": [],
+		"more_info": "https://github.com/ernstmul/ABvalidator/docs/stopping_early_day_of_week.md",
+		"context": null,
+		"message": "Does the EP ensure that experiments are run for full weeks to avoid day of week effects?"
+	},
+	{
+		"type": "confirm",
 		"name": "stopping_early_tests",
 		"requires": [],
 		"more_info": "https://github.com/ernstmul/ABvalidator/docs/stopping_early_tests.md",
