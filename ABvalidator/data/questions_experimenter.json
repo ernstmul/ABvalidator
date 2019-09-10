@@ -143,7 +143,7 @@
 		"requires": [],
 		"more_info": "https://github.com/ernstmul/ABvalidator/docs/stopping_early_peeking.md",
 		"context": "It is understandably interesting to look at the data and analysis during an experiment. This peeking might lead to early stopping the experiment because the results are interpreted by the experimenter or because some p-values already show significance.",
-		"message": "Were you able to look at conclusive results during the runtime of the experiment?"
+		"message": "Were you prohibited from looking at conclusive results during the runtime of the experiment?"
 	},
 	{
 		"type": "confirm",
